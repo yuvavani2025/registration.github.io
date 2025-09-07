@@ -1,0 +1,882 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Youth Parliament 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Fonts & Libraries -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #002366;
+      color: #222;
+      scroll-behavior: smooth;
+      border: 10px solid #600000;
+      border-radius: 20px;
+      padding: 10px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-left: 8px solid #600000;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #600000;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px #999;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: gold;
+      display: block;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+
+    h3 {
+      color: #002366;
+      font-size: 1.7rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+.highlight-photo {
+  margin: 30px auto;
+  text-align: center;
+  background: #fff8d9;
+  padding: 20px;
+  border: 4px solid gold;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  max-width: 500px;
+}
+
+.highlight-photo img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  border: 3px solid #600000;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.highlight-photo .photo-caption {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #600000;
+  text-shadow: 1px 1px 2px #d4af37;
+}
+
+
+    nav {
+      background: #222;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 4px solid gold;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #00ffd5;
+    }
+.founder-image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  width: 120px;
+  background: white;
+  border: 4px solid gold;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.founder-image img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.founder-caption {
+  background: gold;
+  color: #600000;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 6px 4px;
+  border-top: 2px solid #600000;
+}
+
+.top-left-logos {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 3;
+}
+
+.top-left-logos img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid gold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  object-fit: cover;
+}
+
+
+
+
+    header {
+      background: url('data:image/jpeg;base64,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') center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      border-radius: 10px;
+    }
+
+    header .content {
+      position: relative;
+      z-index: 2;
+    }
+
+    header img {
+      height: 150px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+  font-family: 'cursive';
+  
+      font-size: 5rem;
+      margin-bottom: 10px;
+    }
+header h2 {
+  color: #FFD700; /* gold color, for example */
+}
+    header p {
+      font-size: 1.5rem;
+    }
+
+ #about {
+      background: linear-gradient(135deg, #fff, #fff8e1);
+      position: relative;
+      overflow: hidden;
+    }
+    #about .about-wrap {
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start;
+    }
+    #about .about-card {
+      background: #fffff9; border: 2px solid #f1e3b3; border-radius: 16px; padding: 22px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    #about .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    #about .badge {
+      background: #002366; color: #fff; padding: 6px 12px; border-radius: 999px; font-size: 0.82rem;
+    }
+    #about .quick {
+      background: #ffffff; border: 2px dashed #e6c365; border-radius: 16px; padding: 18px;
+    }
+    #about .quick ul { list-style: none; }
+    #about .quick li { margin: 10px 0; display: flex; gap: 10px; align-items: center; }
+    #about .quick i { color: #c08b00; }
+
+
+
+    
+
+.btn {
+      background: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .event {
+      background: #ffffcc;
+      padding: 20px;
+      border-left: 5px solid #007bff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .slideshow-wrapper {
+      overflow: hidden;
+      width: 100%;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      background:#ffffcc;
+      padding: 10px;
+    }
+
+    .slideshow-track {
+      display: flex;
+      width: max-content;
+      animation: slideLoop 40s linear infinite;
+    }
+
+    .slideshow-track img {
+      width: 500px;
+      height: 350px;
+      object-fit: cover;
+      margin-right: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    @keyframes slideLoop {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .form-container {
+      background: #ffffcc;
+      padding: 30px;
+      border-radius: 50px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.1);
+      border: 2px solid #600000;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fefefe;
+    }
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #600000;
+      padding: 10px;
+      text-align: left;
+      background-color: #f9f5f5;
+    }
+
+    th {
+      background-color: #ffefef;
+      color: #600000;
+    }
+   
+
+.payment-section {
+  background-color:  #87CEEB; /* light gray */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+ .note {
+      background: #fff8d9;
+      border-left: 6px solid #f1c40f;
+      padding: 15px;
+      font-weight: bold;
+      color: #8a6d3b;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .email-confirm {
+      padding: 15px;
+      background: #e9f5ff;
+      border-radius: 8px;
+      margin-top: 15px;
+      border: 2px solid #3498db;
+    }
+ .email-options {
+      display: flex;
+      gap: 20px;
+      margin: 10px 0;
+    }
+    .email Option  {
+      background: #3498db;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .email-options label:hover {
+      background: #217dbb;
+    }
+    #newEmailField {
+      display: none;
+      margin-top: 10px;
+    }
+    .section-title {
+      font-size: 18px;
+      margin-top: 25px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      color: #333;
+    }
+
+    button {
+      background-color: #600000;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+      font-size: 1em;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #3e0000;
+    }
+
+/* Venue Section */
+#venue {
+  background: linear-gradient(135deg, #fefefe, #f4f7fb);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 50px 30px;
+  text-align: center;
+}
+
+#venue h2 {
+  font-size: 2.2rem;
+  color: #600000;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.venue-card {
+  background: #fff8d9;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.venue-info {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.venue-info p {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.venue-info i {
+  color: #600000;
+  font-size: 1.2rem;
+}
+
+.location-icon {
+  font-size: 1.1rem;
+  background: #600000;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.location-icon:hover {
+  background: #3e0000;
+  transform: translateY(-2px);
+}
+
+.map-container {
+  display: none;
+  margin-top: 25px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+  
+
+
+
+    #about-section {
+      background-image: url('https://images.unsplash.com/photo-1602081111458-87f3f1f47214');
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+      background-color: rgba(0,0,0,0.5);
+      color: #fff;
+    }
+
+/* 🔹 Contact Section Styling */
+#contact {
+  background: linear-gradient(135deg, #002366, #600000);
+  color: #fff;
+  padding: 60px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  margin-top: 40px;
+}
+
+#contact h2 {
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+  color: gold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.contact-icons i {
+  font-size: 2.5rem;
+  background: rgba(255,255,255,0.15);
+  padding: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.contact-icons i:hover {
+  background: gold;
+  color: #222;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+/* 🔹 Hidden details (email/phone reveal) */
+.hidden-details {
+  display: none;
+  margin-top: 15px;
+  padding: 15px;
+  font-size: 1.1rem;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 10px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.hidden-details a {
+  color: #00ffd5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hidden-details a:hover {
+  color: gold;
+}
+
+
+    #contact us-section {
+      background-image: url('https://t4.ftcdn.net/jpg/09/46/91/57/360_F_946915734_E7pDr1zaNR39JZpCLiPSFY4hEZWGbq9q.jpg');
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+      background-color: rgba(0,0,0,0.5);
+      color: #fff;
+
+
+  </style>
+
+  
+</head>
+<body>
+
+<nav>
+    <div><strong>Youth Parliament 2025</strong></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#register">Register</a>
+      <a href="#venue">Venue</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+  <div class="founder-image">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP3p9D5UupTyooz5AGx0NUX1vpVun_IJkQIQ&s" alt="भिनगा नरेश राजर्षि उदय प्रताप सिंह जू देव">
+ <div class="founder-caption">भिनगा नरेश राजर्षि उदय प्रताप सिंह जू देव</div>
+  </div>
+<div class="top-left-logos">
+  <img src="C:\Users\SHIVANSH\Desktop\cropped_circle_image.png" alt="Logo 1">
+  <img src="C:\Users\SHIVANSH\Desktop\2323.jpg" alt="Logo 2">
+</div>
+
+
+    <div class="content" data-aos="fade-up">
+      <img src="https://www.upcollege.ac.in/AppImage/page/logo.png" alt="Udai Pratap College Logo">
+       <h1>YUVA VANI </h1>
+
+      <h2>Youth Parliament 2025</h2>
+
+      <p>Raise your voice, Shape the Nation</p>
+      <a href="#register" class="btn">Register Now</a>
+    </div>
+
+  </header>
+<div class="highlight-photo" data-aos="zoom-in">
+ <img src="https://image-static.collegedunia.com/public/reviewPhotos/306085/udai-pratap-autonomous-college-varanasi-ho-varanasi-colleges-1yukeme-01.jpg" alt="UDAI PRATAP AUTONOMOUS COLLEGE">
+  <p class="photo-caption">UDAI PRATAP AUTONOMOUS COLLEGE</p>
+</div>
+
+  <section id="about" data-aos="fade-right">
+    <h2>About the Event</h2>
+    <div class="about-wrap">
+      <div class="about-card">
+        <p>
+          Youth Parliament 2025 is a national-level simulation of the Indian Parliament hosted by
+          Udai Pratap Autonomous College. Students represent leaders, debate real issues, and
+          sharpen public speaking, policy analysis, and teamwork.
+        </p>
+        <div class="badges">
+          <span class="badge"><i class="fa-solid fa-microphone-lines"></i>&nbsp;Oratory</span>
+          <span class="badge"><i class="fa-solid fa-scale-balanced"></i>&nbsp;Policy</span>
+          <span class="badge"><i class="fa-solid fa-people-group"></i>&nbsp;Leadership</span>
+          <span class="badge"><i class="fa-solid fa-lightbulb"></i>&nbsp;Innovation</span>
+        </div>
+      </div>
+      <div class="quick">
+        <h3 style="margin-top:0;">Quick Highlights</h3>
+        <ul>
+          <li><i class="fa-solid fa-building-columns"></i> Realistic parliamentary procedure</li>
+          <li><i class="fa-solid fa-user-tie"></i> Ruling & Opposition teams (3+3 members)</li>
+          <li><i class="fa-solid fa-award"></i> Certificates & merit recognition</li>
+          <li><i class="fa-solid fa-location-dot"></i> Venue: UP College Auditorium, Varanasi</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+ <section id="gallery">
+    <h2>Parliament Gallery</h2>
+    <div class="slideshow-wrapper">
+      <div class="slideshow-track">
+        <img src="https://nyps.mpa.gov.in/Photos/InstPhoto4_23062022_NYPS3492.jpg" alt="Gallery Image 1">
+        <img src="https://d2zvqky3pkh4r9.cloudfront.net/pages/Blank_Project.png" alt="Gallery Image 2">
+        <img src="https://www.thepresidiumschool.com/common/images/gallery/photo-gallery/youth-parliament-2016-17/youth-parliament-2016-17-0023.jpg" alt="Gallery Image 3">
+        <img src="https://mckv.edu.in/site/assets/files/2134/3.1280x673-cropx0y179-is.709x0-is.jpg" alt="Gallery Image 4">
+        <img src="https://as2.ftcdn.net/v2/jpg/05/01/11/12/1000_F_501111233_YXp0jQwvUbHz6UG6YmH5OlFeyxK8NbbT.jpg" alt="Gallery Image 5">
+        <img src="https://nyps.mpa.gov.in/Photos/InstPhoto4_23062022_NYPS3492.jpg" alt="Gallery Image 6">
+        <img src="https://iiscbangalore.kvs.ac.in/sites/default/files/inline-images/Youth%20Parliament%202.jpg" alt="Gallery Image 7">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvVjOe5GVBajwAqbS83QciKLufW_Xrb_qArw&s" alt="Gallery Image 8">
+        <img src="https://nyps.mpa.gov.in/images/gallery/photo-1.jpg" alt="Gallery Image 9">
+      </div>
+    </div>
+  </section>
+
+
+<section id="timeline" data-aos="fade-left">
+  <h2>Event Timeline</h2>
+  <div class="timeline">
+    
+    <div class="event" style="background:#e6f7ff; border-left:6px solid #007bff;">
+      <h3>September 10</h3>
+      <p><i class="fa-solid fa-door-open"></i> Registration Opens</p>
+      <span class="badge" style="background:#007bff;">📝 Register</span>
+    </div>
+
+    <div class="event" style="background:#fff4e6; border-left:6px solid #ff9800;">
+      <h3>September 15</h3>
+      <p><i class="fa-solid fa-lock"></i> Registration Closes</p>
+      <span class="badge" style="background:#ff9800;">⏳ Last Date</span>
+    </div>
+
+    <div class="event" style="background:#f3e5f5; border-left:6px solid #9c27b0;">
+      <h3>September 16</h3>
+      <p><i class="fa-solid fa-user-check"></i> Screening & Selections</p>
+      <span class="badge" style="background:#9c27b0;">✅ Selection</span>
+    </div>
+
+    <div class="event" style="background:#e8f5e9; border-left:6px solid #4caf50;">
+      <h3>September 17</h3>
+      <p><i class="fa-solid fa-bullhorn"></i> Final List Announcement</p>
+      <span class="badge" style="background:#4caf50;">📢 Announcement</span>
+    </div>
+
+    <div class="event" style="background:#fff3f3; border-left:6px solid #e91e63;">
+      <h3>September 20/21</h3>
+      <p><i class="fa-solid fa-landmark"></i> Main Event Day at College Auditorium MP HALL</p>
+      <span class="badge" style="background:#e91e63;">🎤 Main Event</span>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- ✅ REGISTRATION FORM SECTION -->
+<section id="register" data-aos="fade-up">
+  <div class="form-container">
+    <h2>Registration</h2>
+    <p style="font-size:1.2rem; margin:15px 0;">
+      Click the buttons below to complete your registration for the events.
+    </p>
+    <a href="https://forms.gle/8A8zBbuKMK58Yo1C9" target="_blank" class="btn">
+      👉 Register for Youth Parliament
+    </a>
+    <br><br>
+    <a href="https://forms.gle/U9qP5cPkA1AJNbB77" target="_blank" class="btn">
+      👉 Register for Kala Utsav
+    </a>
+  </div>
+</section>
+
+
+
+
+
+<section id="venue" data-aos="fade-right">
+  <h2>Venue</h2>
+  <div class="venue-card">
+    <div class="venue-info">
+      <p><i class="fa-solid fa-location-dot"></i> <strong>Location:</strong> Udai Pratap College Auditorium, Varanasi</p>
+      <p><i class="fa-solid fa-calendar-days"></i> <strong>Date:</strong> September 20&21, 2025</p>
+      <p><i class="fa-solid fa-clock"></i> <strong>Time:</strong> 10:00 AM – 4:00 PM</p>
+    </div>
+
+    <div class="location-icon" onclick="toggleMap()">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Click to View Map</span>
+    </div>
+
+    <div id="map" class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.5501724581763!2d82.97181897415967!3d25.35287132538006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2c3546715737%3A0xb4772ec722468f73!2sUdai%20Pratap%20Autonomous%20College!5e0!3m2!1sen!2sin!4v1754013255567!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+
+ 
+ 
+
+ <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-icons">
+      <i class="fas fa-envelope" onclick="toggleDetail('email')"></i>
+      <i class="fas fa-phone" onclick="toggleDetail('phone')"></i>
+    </div>
+    <div class="hidden-details" id="email">Email: <a href="mailto:vedang0402@gmail.com">vedang0402@gmail.com</a></div>
+    <div class="hidden-details" id="phone">Phone: +91-6388733834</div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Youth Parliament. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleDetail(id) {
+      const detail = document.getElementById(id);
+      detail.style.display = detail.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+ 
+
+ <script>
+  function toggleMap() {
+    const map = document.getElementById("map");
+    map.style.display = map.style.display === "block" ? "none" : "block";
+  }
+</script>
+  
+<script>
+function fillSameEmail() {
+  document.getElementById('newEmailField').classList.add('hidden');
+  let primaryEmail = document.getElementById('primaryEmail').value;
+  document.querySelector('input[name="confirmation_email"]').value = primaryEmail;
+}
+function showNewEmail() {
+  document.getElementById('newEmailField').classList.remove('hidden');
+  document.querySelector('input[name="confirmation_email"]').value = '';
+}
+</script>
+
+
+<script>
+  const form = document.getElementById('registrationForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const newEmailField = document.getElementById('newEmailField');
+
+  function toggleNewEmail(show) {
+    newEmailField.style.display = show ? 'block' : 'none';
+    const newEmailInput = newEmailField.querySelector('input');
+    if (show) {
+      newEmailInput.required = true;
+    } else {
+      newEmailInput.required = false;
+      newEmailInput.value = '';
+    }
+  }
+
+  form.addEventListener('input', () => {
+    submitBtn.disabled = !form.checkValidity();
+  });
+</script>
+
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    function checkDuplicateIDs() {
+      const ids = [];
+      const inputs = document.querySelectorAll('input[name$="collegeid1"], input[name$="collegeid2"], input[name$="collegeid3"]');
+      for (const input of inputs) {
+        const val = input.value.trim().toLowerCase();
+        if (ids.includes(val)) return false;
+        ids.push(val);
+      }
+      return true;
+    }
+
+   
+  
+  </script>
+<script>
+  // Hide details when clicking icons or outside
+  function toggleDetail(id) {
+    const allDetails = document.querySelectorAll('.hidden-details');
+
+    // First hide all details
+    allDetails.forEach(d => d.style.display = "none");
+
+    // Then show the clicked one
+    const detail = document.getElementById(id);
+    if (detail) detail.style.display = "block";
+  }
+
+  // Close details when clicking outside
+  document.addEventListener("click", function(e) {
+    if (!e.target.closest(".contact-icons") && !e.target.closest(".hidden-details")) {
+      document.querySelectorAll('.hidden-details').forEach(d => d.style.display = "none");
+    }
+  });
+</script>
+
+<script>
+  // Generic function for showing/hiding details
+  function toggleDetail(id) {
+    const allDetails = document.querySelectorAll('.hidden-details');
+
+    // First hide all
+    allDetails.forEach(d => d.style.display = "none");
+
+    // Then show clicked one
+    const detail = document.getElementById(id);
+    if (detail) detail.style.display = "block";
+  }
+
+  // Hide details when clicking outside
+  document.addEventListener("click", function(e) {
+    if (
+      !e.target.closest(".contact-icons") && 
+      !e.target.closest(".venue-icons") && 
+      !e.target.closest(".hidden-details")
+    ) {
+      document.querySelectorAll('.hidden-details').forEach(d => d.style.display = "none");
+    }
+  });
+</script>
+
+
+
+
+</body>
+</html>
